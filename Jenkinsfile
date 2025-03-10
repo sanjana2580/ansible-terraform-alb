@@ -9,14 +9,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/sanjana2580/ansible-terraform-alb.git'
             }
         }
-        stage("move the target") {
-            steps {
-                sh 'mv target/bhoomika.war .'
-            }
-        }
         stage("Prepare Build") {
             steps {
                 sh 'mvn clean package'
+            }
+        }
+        stage("move the target") {
+            steps {
+                sh 'mv target/bhoomika.war .'
             }
         }
         stage("build docker image"){
