@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo useradd ansible
 echo "user is created"
 echo "ansible:1234" | sudo chpasswd 
